@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'reset';
+
+$font-stack:    Roboto,Helvetica Neue,sans-serif;
+$primary-color: red;
+
+html{
+    height: 100%;
+    font-family: $font-stack ;
+}
+
+body {
+    min-width:320px; /* suppose you want minimun width of 320px */
+    width: auto ;  /* Firefox will set width as auto */
+    height: 100%;
+    width: 100%;
+    font-size: 18px ;
+
+}
+.testStyle {
+    color: $primary-color;
+    font-size: 1.44em;
+}

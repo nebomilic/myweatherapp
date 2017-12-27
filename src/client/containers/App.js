@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 class App extends Component {
 
     someMethod() {
@@ -10,7 +9,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>this is the shit!</div>
+            <div className='testStyle'>this is the stuff!</div>
 
         );
     }

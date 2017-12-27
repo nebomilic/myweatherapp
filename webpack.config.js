@@ -1,7 +1,11 @@
-var webpack = require("webpack");
+const webpack = require("webpack");
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var extractPlugin = new ExtractTextPlugin({
+    filename: 'main.css'
+ });
 
 module.exports = {
     entry: "./src/client/index.js",
@@ -28,12 +32,10 @@ module.exports = {
                
             },
             {
-                test: /\.css$/,
-                loader:['style-loader','css-loader']
-            },
-             {
-                test: /\.woff$/,
-                use: 'url-loader'
+                test: /\.scss$/,
+                use: extractPlugin.extract({
+                    use: ['css-loader', 'sass-loader']
+                })
             }
         ]
     },
@@ -42,7 +44,7 @@ module.exports = {
             template: 'index.template',
             inject: 'body'
             }),
-        new ExtractTextPlugin('style.css')
+        extractPlugin     
     ]
 }
 
