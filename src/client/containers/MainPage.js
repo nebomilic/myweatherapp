@@ -13,11 +13,13 @@ class MainPage extends Component {
             <header>myWeatherApp</header>
             <div className='left-control'>&lt;</div>
             <div className='weather-cards-container'>
-                <div className='weather-card'>today<br/>19/12<br /> max 1 <hr /> min -2</div>  
-                <div className='weather-card'>tomorrow<br/>19/12<br /> max 1 <hr /> min -2</div>  
-                <div className='weather-card'>sunday<br/>19/12<br /> max 1 <hr /> min -2</div>  
-                <div className='weather-card'>Monday<br/>19/12<br /> max 1 <hr /> min -2</div>  
-                
+            {this.props.forecast.map((item, i)=>
+                <div className='weather-card' key={i}>
+                {item.day}<br/>
+                {item.date}<hr /> 
+                max {item.high} <br /> 
+                min {item.low}</div>  
+        )}
             </div>
             <div className='right-control'>&gt;</div>
 
