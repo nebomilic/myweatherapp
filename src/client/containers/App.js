@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
-class App extends Component {
+import LoadingPage from './LoadingPage';
+import MainPage from './MainPage';
+class App extends Component { 
 
-    someMethod() {
-        // I put this here just to avoid some linter errors
-        console.log(this.props);
+    componentWillMount() {
+        this.setState({isLoading:true});
+        setTimeout(() => {
+            this.setState({isLoading:false});
+        }, 1000);
     }
 
-
     render() {
+       
         return (
-            <div className='testStyle'>this is the stuff!</div>
+        <div>
 
+        {this.state.isLoading === true &&   
+            <LoadingPage />
+        }
+
+        {this.state.isLoading === false &&   
+            <MainPage />
+        }
+        </div>
         );
     }
 }

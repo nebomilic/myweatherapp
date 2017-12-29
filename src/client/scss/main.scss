@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'reset';
+@import 'animations';
+@import 'values';
 
-$font-stack:    Roboto,Helvetica Neue,sans-serif;
-$primary-color: red;
 
 html{
     height: 100%;
@@ -15,9 +15,103 @@ body {
     height: 100%;
     width: 100%;
     font-size: 18px ;
+    background: linear-gradient($bg-light-blue, $bg-dark-blue);
+    min-width: 320px;
 
 }
-.testStyle {
-    color: $primary-color;
-    font-size: 1.44em;
+.loading-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $white-text-color;
+    font-style: italic;
+    
 }
+
+.loading-sun {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    padding: 10px;   
+
+}
+.weather-content {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto;
+    background: #dde9b4;
+    width: 100%;
+    margin: auto;
+}
+
+header {
+    grid-column: 1/ -1;
+    text-align: center;
+}
+
+.left-control {
+    grid-column: 1 / 2;    
+    background: #e9b4e0
+}
+
+.right-control {
+    grid-column: -2 / -1;
+    background: #bcb4e9
+}
+
+.weather-cards-container {
+    grid-column: 2 / -2;    
+    background: #e9c1b4;
+    overflow: hidden;
+    height: 300px;   
+    
+}
+
+.weather-card {
+    display: block;    
+    float: left;
+    border: solid;
+    width: 33.33%;
+    height: 300px;
+}
+
+@media (min-width: 1200px){
+    .weather-card {
+        width: 25%;
+    }
+
+    .weather-content{
+        width: 1100px;
+    }
+}
+
+@media (max-width: 600px){
+    .weather-card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 380px){
+    .weather-card {      
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px){
+    .weather-cards-container {
+        grid-column: 1 / -1;  
+    }
+
+    .left-control {
+        display: none;
+    }
+
+    .right-control {
+        display: none;
+    }
+}
+
