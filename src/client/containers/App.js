@@ -1,25 +1,13 @@
 import React, { Component } from 'react';
 import LoadingPage from './LoadingPage';
 import MainPage from './MainPage';
-import config from '../config';
-import callUrl from '../utils';
+import {connect} from "react-redux";
+import {fetchForecast} from '../actions';
+
 class App extends Component { 
 
-
     componentWillMount() {
-        this.setState({isLoading:true, loadingError: false});
-
-        callUrl(config.GET_WEATHER_URL, 'GET').then(function(result){
-            const data = JSON.parse(result);
-            this.setState({forecast: data.query.results.channel.item.forecast});
-        }.bind(this)).catch(function(error){
-            this.setState({loadingError:true});
-        }.bind(this));
-
-
-        setTimeout(() => {
-            this.setState({isLoading:false});
-        }, 1000);
+        this.props.dispatch(fetchForecast());
     }
 
     render() {
@@ -27,18 +15,34 @@ class App extends Component {
         return (
         <div>
 
-        {this.state.isLoading === true &&   
-            <LoadingPage loadingError={this.state.loadingError}/>
+        {this.props.isLoading === true &&   
+            <LoadingPage loadingError={this.props.loadingError}/>
         }
 
-        {this.state.isLoading === false &&   
-            <MainPage forecast={this.state.forecast} />
+        {this.props.isLoading === false &&   
+            <MainPage forecast={this.props.forecast} />
         }
         </div>
         );
     }
 }
 
+const mapStateToProps = (state, ownProps) => ({  
+    forecast: state.forecastReducer.forecast,
+    isLoading: state.forecastReducer.isLoading,
+    loadingError: state.forecastReducer.loadingError,  
+  });
+  
+ /* const mapDispatchToProps = {  
+    activateGeod,
+    closeGeod,
+  };*/
+  
+  const AppContainer = connect(  
+    mapStateToProps
+  )(App);
 
-export default App;
+  //used store connection code from http://blog.tylerbuchea.com/super-simple-react-redux-application-example/
+  
+  export default AppContainer;
 

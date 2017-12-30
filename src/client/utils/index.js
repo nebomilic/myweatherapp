@@ -1,4 +1,4 @@
-export default function callUrl(url, method) {
+function callUrl(url, method) {
     return new Promise(function(resolve, reject){
         var xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -23,5 +23,9 @@ export default function callUrl(url, method) {
 
     });
 
+}
+
+export function getUrl(url) {
+    return callUrl(url, 'GET');
 }
 
