@@ -43,7 +43,7 @@ body {
     grid-gap: 3px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 40px auto;
-    background: #dde9b4;
+    //background: #dde9b4;
     width: 100%;
     margin: auto;
 }
@@ -55,33 +55,42 @@ header {
 
 .left-control {
     grid-column: 1 / 2;    
-    background: #e9b4e0
+    //background: #e9b4e0
 }
 
 .right-control {
     grid-column: -2 / -1;
-    background: #bcb4e9
+    //background: #bcb4e9
 }
 
 .weather-cards-container {
     grid-column: 2 / -2;    
-    background: #e9c1b4;
-    overflow: hidden;
+    //background: #e9c1b4;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    //overflow: hidden;
     height: 300px;   
     
 }
 
+// try this for horizontal scrolling 
+// http://www.websitecodetutorials.com/code/photo-galleries/css-horizontal-scroller4-demo.php
+
 .weather-card {
-    display: block;    
+    display: inline-block;    
     float: left;
-    border: solid;
-    width: 33.33%;
+    //border: solid;
+    width: 30%;
     height: 300px;
+    margin: 3px;
+    background: #dde9b4;
+    border: none; 
+    border-radius: 7px;
 }
 
 @media (min-width: 1200px){
     .weather-card {
-        width: 25%;
+        width: 24%;
     }
 
     .weather-content{
@@ -91,7 +100,7 @@ header {
 
 @media (max-width: 600px){
     .weather-card {
-        width: 50%;
+        width: 47%;
     }
 }
 

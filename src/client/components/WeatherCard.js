@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
 
-const WeatherCard = ({dayData}) => {
+const WeatherCard = ({data}) => {
 
     return (
-        <div className='weather-card'>today<br/>19/12<br /> max 1 <hr /> min -2</div>  
+        <div className='weather-card'>
+         {data.day}<br/>
+         {data.date}<hr /> 
+         max {data.high} <br /> 
+         min {data.low}
+        </div>  
     );
 }
 

@@ -7,11 +7,13 @@ class App extends Component {
 
 
     componentWillMount() {
-        this.setState({isLoading:true});
+        this.setState({isLoading:true, loadingError: false});
 
         callUrl(config.GET_WEATHER_URL, 'GET').then(function(result){
             const data = JSON.parse(result);
             this.setState({forecast: data.query.results.channel.item.forecast});
+        }.bind(this)).catch(function(error){
+            this.setState({loadingError:true});
         }.bind(this));
 
 
@@ -26,7 +28,7 @@ class App extends Component {
         <div>
 
         {this.state.isLoading === true &&   
-            <LoadingPage />
+            <LoadingPage loadingError={this.state.loadingError}/>
         }
 
         {this.state.isLoading === false &&   
