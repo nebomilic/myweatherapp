@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchForecast } from '../actions';
 import LoadingPage from './LoadingPage';
 import MainPage from './MainPage';
-import {connect} from "react-redux";
-import {fetchForecast} from '../actions';
 
 class App extends Component { 
 
@@ -10,39 +11,37 @@ class App extends Component {
         this.props.dispatch(fetchForecast());
     }
 
-    render() {
-       
+    render() {       
         return (
-        <div>
-
-        {this.props.isLoading === true &&   
+            <div>
+                {this.props.isLoading === true &&   
             <LoadingPage loadingError={this.props.loadingError}/>
-        }
-
-        {this.props.isLoading === false &&   
+                }
+                {this.props.isLoading === false &&   
             <MainPage forecast={this.props.forecast} />
-        }
-        </div>
+                }
+            </div>
         );
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({  
+const mapStateToProps = ( state ) => ({  
     forecast: state.forecastReducer.forecast,
     isLoading: state.forecastReducer.isLoading,
-    loadingError: state.forecastReducer.loadingError,  
-  });
-  
- /* const mapDispatchToProps = {  
+    loadingError: state.forecastReducer.loadingError,
+});
+/* const mapDispatchToProps = {
     activateGeod,
     closeGeod,
-  };*/
-  
-  const AppContainer = connect(  
-    mapStateToProps
-  )(App);
+  }; */
+const AppContainer = connect(mapStateToProps)(App);
+// used store connection code from http://blog.tylerbuchea.com/super-simple-react-redux-application-example/
 
-  //used store connection code from http://blog.tylerbuchea.com/super-simple-react-redux-application-example/
-  
-  export default AppContainer;
+App.propTypes = {
+    isLoading: PropTypes.bool,
+    loadingError: PropTypes.bool,
+    forecast: PropTypes.array,
+    dispatch: PropTypes.func
+};
+export default AppContainer;
 
