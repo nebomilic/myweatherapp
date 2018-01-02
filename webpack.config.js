@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -6,30 +5,30 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var extractPlugin = new ExtractTextPlugin({
     filename: 'main.css'
- });
+});
 
 module.exports = {
-    entry: "./src/client/index.js",
+    entry: './src/client/index.js',
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: "bundle.js",
-        publicPath: "/"
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     devServer: {
         inline: true,
-        contentBase: "./dist",
+        contentBase: './dist',
         port: 3000
     },
 
  
-    devtool: "#eval-source-map",
+    devtool: '#eval-source-map',
 
     module: {
         loaders: [            
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loaders: ["babel-loader", "babel-loader?presets[]=latest,presets[]=stage-0,presets[]=react"]
+                loaders: ['babel-loader', 'babel-loader?presets[]=latest,presets[]=stage-0,presets[]=react']
                
             },
             {
@@ -37,18 +36,18 @@ module.exports = {
                 use: extractPlugin.extract({
                     use: ['css-loader', 'sass-loader']
                 })
-            }
+            },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.template',
             inject: 'body'
-            }),
+        }),
         extractPlugin,
         new CopyWebpackPlugin([
             { from: './src/client/assets', to: 'assets' }
         ])     
     ]
-}
+};
 
