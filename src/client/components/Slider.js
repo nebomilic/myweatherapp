@@ -5,11 +5,11 @@ class Slider extends Component {
 
     // TODO: add key listeners in order to control slider with left and right slider
 
-    componentWillMount() {
+    componentWillMount = () =>  {
         this.resetState();
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         window.addEventListener('resize', this.handleResize);
     }
 
@@ -18,7 +18,11 @@ class Slider extends Component {
     }  
     
     resetState = () => {
-        this.setState({pageSize: this._calcPageSize(), translateValue: 0});
+        const pageSize = this._calcPageSize();
+        const {forecast} = this.props;
+
+        const numPages = Math.ceil(forecast.length / pageSize);
+        this.setState({pageSize: this._calcPageSize(), translateValue: 0, currentPage: 0, numPages: numPages});
     }
     
     renderSlides = () => {
@@ -38,11 +42,42 @@ class Slider extends Component {
     }
 
     previousPage = () => {
-        this.setState({translateValue: this.state.translateValue + this._slideWidth()});
+        if (this.state.currentPage > 0) {
+
+            if (this.state.currentPage === 1) {
+                this._toggleActiveStyle(leftArrow);
+            }
+
+            if (this.state.currentPage === this.state.numPages - 1) {
+                this._toggleActiveStyle(rightArrow);
+            }
+
+            this.setState({translateValue: this.state.translateValue + this._slideWidth(),
+                currentPage: this.state.currentPage-1 
+            });
+        }
     }
     
     nextPage = () => {
-        this.setState({translateValue: this.state.translateValue - this._slideWidth()});
+        if (this.state.currentPage < this.state.numPages - 1) {
+
+            if (this.state.currentPage === this.state.numPages - 2) {
+                this._toggleActiveStyle(rightArrow);
+            }
+
+            if (this.state.currentPage === 0) {
+                this._toggleActiveStyle(leftArrow);
+            }
+
+            this.setState({translateValue: this.state.translateValue - this._slideWidth(),
+                currentPage: this.state.currentPage+1 
+            });
+        }
+    }
+
+    _toggleActiveStyle = (element) => {
+        element.classList.toggle('control');
+        element.classList.toggle('control--disabled');
     }
 
     _calcTranslateValue = () => {
@@ -50,7 +85,7 @@ class Slider extends Component {
         return width;
     }
 
-    _calcPageSize() {
+    _calcPageSize = () => {
         const width = document.body.offsetWidth;
         // conditions are based on media queries in main.scss
         let pageSize = 3;
@@ -64,21 +99,23 @@ class Slider extends Component {
 
         return pageSize;
 
-    }
+    }  
 
     _slideWidth = () => {
         const slide = document.querySelector('.weather-card-slide');
         return slide.clientWidth;
     }
 
-    render() {
+    render = () => {
 
         const {translateValue} = this.state;
 
         return (
 
             <div className='slider' >
-                <div className='left-control'><a href='#' onClick={this.previousPage}>&lt;</a></div>
+                <div className='left-control' onClick={this.previousPage}>
+                    <span id='leftArrow' className='glyphicon glyphicon-chevron-left control--disabled'></span>
+                </div>
                 <div className='weather-slider'>
                     <div className='slider-wrapper'
                         style={{
@@ -88,7 +125,9 @@ class Slider extends Component {
                         { this.renderSlides() }
                     </div>
                 </div>
-                <div className='right-control'><a href='#' onClick={this.nextPage}>&gt;</a></div>
+                <div className='right-control' onClick={this.nextPage}>
+                    <span id='rightArrow' className='glyphicon glyphicon-chevron-right control'></span>
+                </div>
             </div>
 
         );

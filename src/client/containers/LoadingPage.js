@@ -4,6 +4,7 @@ class LoadingPage extends Component {
     render() {
         return (
             <div className='loading-content'>
+                <header>myWeatherApp</header>
                 <img className='loading-sun' src='/assets/sun.svg' alt='' width='120' height='120' />
                 <div>Just a moment...</div>
             </div>

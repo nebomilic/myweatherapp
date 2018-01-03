@@ -1,5 +1,5 @@
 {
-  "name": "myWeatherApp",
+  "name": "myweatherapp",
   "version": "1.0.0",
   "description": "Simple weather app that uses yahoo weather api",
   "main": "index.js",

@@ -1,5 +1,22 @@
-$font-stack:    Roboto,Helvetica Neue,sans-serif;
-$primary-color: red;
-$bg-light-blue: #c6edff;
-$bg-dark-blue: #1b7cc6;
-$white-text-color: white;
+@import url('https://fonts.googleapis.com/css?family=Delius');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji');
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+  
+.the-icons {
+  font-size: 25px;
+}
+
+$boring-font: 'Delius', Helvetica Neue,sans-serif;
+$fancy-font: 'Baloo Paaji', Helvetica Neue,sans-serif;
+//$boring-font: Roboto,Helvetica Neue,sans-serif;
+$yellow: #EDB747;
+$light-blue: #EFF4ED;
+$dark-blue: #4786b9;
+$white: white;
+$transparent-white: rgba(255, 255, 255, 0.6);
+$grey: rgb(189, 186, 158);
+$font-size-normal: 24px;
+
+$font-size-bigger: 1.414rem;
+$font-size-biggest: 1.999rem;
+$font-size-small: 0.707rem;

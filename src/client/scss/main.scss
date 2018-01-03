@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 @import 'reset';
 @import 'animations';
 @import 'values';
 @import 'slider';
+@import 'background';
 
 
 html{
-    height: 100%;
-    font-family: $font-stack ;
+    height: 100%;    
+    font-size: $font-size-normal;
+    
 }
 
 body {
@@ -15,9 +17,10 @@ body {
     width: auto ;  /* Firefox will set width as auto */
     height: 100%;
     width: 100%;
-    font-size: 18px ;
-    background: linear-gradient($bg-light-blue, $bg-dark-blue);
+    //background: linear-gradient($light-blue, $dark-blue);
+    //background-image: url("/assets/sky.jpg");
     min-width: 320px;
+    font-family: $boring-font ;
 
 }
 .loading-content {
@@ -27,8 +30,8 @@ body {
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
     text-align: center;
-    color: $white-text-color;
-    font-style: italic;
+    color: $grey;
+    font-size: $font-size-normal;
     
 }
 
@@ -43,7 +46,7 @@ body {
     display: grid;
     grid-gap: 3px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 40px auto;
+    grid-template-rows: 110px auto;
     width: 100%;
     margin: auto;
 }
@@ -51,6 +54,20 @@ body {
 header {
     grid-column: 1 / -1;
     text-align: center;
+    font-family: $fancy-font;
+    font-size: $font-size-biggest;
+    color: $dark-blue;
+    margin: 25px;
+
+}
+
+
+.clear-float {
+    clear: both;
+}
+
+.center-text {
+    text-align: left;
 }
 
 @media (min-width: 1200px){
