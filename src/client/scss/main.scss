@@ -1,9 +1,11 @@
-
 @import 'reset';
 @import 'animations';
 @import 'values';
 @import 'slider';
 @import 'background';
+@import 'chart';
+@import 'toggle';
+
 
 
 html{
@@ -46,7 +48,7 @@ body {
     display: grid;
     grid-gap: 3px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 110px auto;
+    grid-template-rows: 60px 220px 350px ;
     width: 100%;
     margin: auto;
 }

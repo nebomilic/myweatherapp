@@ -15,3 +15,10 @@ export function fetchForecast(){
             });
     };
 }
+
+export function switchUnit() {
+    return function(dispatch){
+        dispatch({type:'SWITCH_UNIT'});
+    };
+
+}

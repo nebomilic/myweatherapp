@@ -1,7 +1,8 @@
 export default function reducer(state={
     forecast:[],
     isLoading: true,
-    loadingError: false
+    loadingError: false,
+    unit: 'F'
 }, action){
     switch (action.type) {
     case 'FETCH_FORECAST':{
@@ -21,6 +22,14 @@ export default function reducer(state={
             loadingError: true,
         };
     }
+
+    case 'SWITCH_UNIT':{
+        const newUnit = state.unit === 'F'?'C':'F';
+        return {
+            ...state,
+            unit: newUnit
+        };
+    }    
   
     }
     return state;

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchForecast } from '../actions';
+import { fetchForecast, switchUnit } from '../actions';
 import LoadingPage from './LoadingPage';
 import MainPage from './MainPage';
 
 class App extends Component { 
 
-    componentWillMount() {
+    componentWillMount = () => {
         this.props.dispatch(fetchForecast());
+    }
+
+    unitClickHandler = () => {
+        this.props.dispatch(switchUnit());
     }
 
     render() {       
@@ -18,7 +22,7 @@ class App extends Component {
             <LoadingPage loadingError={this.props.loadingError}/>
                 }
                 {this.props.isLoading === false &&   
-            <MainPage forecast={this.props.forecast} />
+            <MainPage forecast={this.props.forecast} unitClickHandler={this.unitClickHandler}/>
                 }
             </div>
         );
@@ -35,8 +39,6 @@ const mapStateToProps = ( state ) => ({
     closeGeod,
   }; */
 const AppContainer = connect(mapStateToProps)(App);
-// used store connection code from http://blog.tylerbuchea.com/super-simple-react-redux-application-example/
-
 App.propTypes = {
     isLoading: PropTypes.bool,
     loadingError: PropTypes.bool,
