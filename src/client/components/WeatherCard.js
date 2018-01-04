@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { convertToCurrentUnitString } from '../utils';
 
 
 class WeatherCard extends Component { 
 
     //returns full string
-    useCurrentUnit = (value) => {
+    convertToCurrentUnitString = (value) => {
         let returnValue = value;
         if (this.props.unit === 'C') {
             returnValue = Math.ceil((value - 32 ) * 5/9);
@@ -18,16 +19,17 @@ class WeatherCard extends Component {
 
     render() {
 
+        const {data, unit} = this.props;
         return (
             <div className='weather-card'>
                 <div className='day'>{this.props.data.day}</div>
-                <div className='date'>{this.props.data.date.substr(0,6)}</div>
+                {/*<div className='date'>{this.props.data.date.substr(0,6)}</div>*/}
                 <hr className='clear-float'/> 
                 <div className='center-text'>
     
-                    <span className='high'>{this.useCurrentUnit(this.props.data.high)} / </span> 
-                    <span className='low'> {this.useCurrentUnit(this.props.data.low)}</span><br />
-                    <span className='text'>{this.props.data.text} </span>
+                    <span className='high'>{convertToCurrentUnitString(data.high, unit)} / </span> 
+                    <span className='low'> {convertToCurrentUnitString(data.low, unit)}</span><br />
+                    <span className='text'>{data.text} </span>
     
                 </div>
             </div>  

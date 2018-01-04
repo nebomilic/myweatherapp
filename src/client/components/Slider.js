@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import WeatherCard from './WeatherCard';
+import Swipe from '../utils/Swipe';
 class Slider extends Component {
 
     // TODO: add key listeners in order to control slider with left and right slider
@@ -39,6 +40,27 @@ class Slider extends Component {
     
         }
         return slides;
+    }
+
+    handleKeyboard = () => {
+        //TODO: use arrow keys to control the slider
+    }
+
+    handleSwipe = () => {
+        new Swipe(document.getElementById('gallery'), function(event, direction) {
+            event.preventDefault();
+            
+            switch (direction) {            
+            case 'left':
+                // Handle Swipe Left
+                //TODO: call previous page
+                break;
+            case 'right':
+                // Handle Swipe Right
+                // TODO: call next page
+                break;
+            }
+        });
     }
 
     previousPage = () => {

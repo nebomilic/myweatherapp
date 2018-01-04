@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchForecast, switchUnit } from '../actions';
+import { fetchForecast } from '../actions';
 import LoadingPage from './LoadingPage';
 import MainPage from './MainPage';
 
@@ -11,18 +11,14 @@ class App extends Component {
         this.props.dispatch(fetchForecast());
     }
 
-    unitClickHandler = () => {
-        this.props.dispatch(switchUnit());
-    }
-
     render() {       
         return (
             <div>
-                {this.props.isLoading === true &&   
+                {(this.props.isLoading === true || this.props.loadingError === true) &&  
             <LoadingPage loadingError={this.props.loadingError}/>
                 }
-                {this.props.isLoading === false &&   
-            <MainPage forecast={this.props.forecast} unitClickHandler={this.unitClickHandler}/>
+                {(this.props.isLoading === false &&  this.props.loadingError === false) && 
+            <MainPage forecast={this.props.forecast} />
                 }
             </div>
         );
@@ -32,18 +28,18 @@ class App extends Component {
 const mapStateToProps = ( state ) => ({  
     forecast: state.forecastReducer.forecast,
     isLoading: state.forecastReducer.isLoading,
-    loadingError: state.forecastReducer.loadingError,
+    loadingError: state.forecastReducer.loadingError
 });
 /* const mapDispatchToProps = {
     activateGeod,
     closeGeod,
   }; */
-const AppContainer = connect(mapStateToProps)(App);
 App.propTypes = {
     isLoading: PropTypes.bool,
     loadingError: PropTypes.bool,
     forecast: PropTypes.array,
     dispatch: PropTypes.func
 };
+const AppContainer = connect(mapStateToProps)(App);
 export default AppContainer;
 

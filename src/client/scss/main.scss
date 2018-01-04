@@ -44,6 +44,12 @@ body {
     padding: 10px;   
 
 }
+
+.loading-sun--error {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
 .weather-content {
     display: grid;
     grid-gap: 3px;
