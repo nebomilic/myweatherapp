@@ -8,10 +8,12 @@ class Slider extends Component {
 
     componentWillMount = () =>  {
         this.resetState();
+        this.handleKeyboard();
     }
 
     componentDidMount = () => {
         window.addEventListener('resize', this.handleResize);
+        this.handleSwipe();
     }
 
     handleResize = () => {
@@ -43,21 +45,26 @@ class Slider extends Component {
     }
 
     handleKeyboard = () => {
-        //TODO: use arrow keys to control the slider
+        window.onkeyup = (e) => {
+            var key = e.keyCode ? e.keyCode : e.which;
+         
+            if (key == 37) {
+                this.previousPage();
+            }else if (key == 39) {
+                this.nextPage();
+            }
+        };
     }
 
     handleSwipe = () => {
-        new Swipe(document.getElementById('gallery'), function(event, direction) {
-            event.preventDefault();
-            
+        new Swipe(document.getElementById('slider'), (event, direction) => {
+            event.preventDefault();            
             switch (direction) {            
             case 'left':
-                // Handle Swipe Left
-                //TODO: call previous page
+                this.nextPage();
                 break;
             case 'right':
-                // Handle Swipe Right
-                // TODO: call next page
+                this.previousPage();
                 break;
             }
         });
@@ -134,7 +141,7 @@ class Slider extends Component {
 
         return (
 
-            <div className='slider' >
+            <div className='slider' id='slider'>
                 <div className='left-control' onClick={this.previousPage}>
                     <span id='leftArrow' className='glyphicon glyphicon-chevron-left control--disabled'></span>
                 </div>

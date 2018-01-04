@@ -9,7 +9,6 @@ export function fetchForecast(){
                 setTimeout(() => {
                     const forecast  = data.query.results.channel.item.forecast;
                     forecast[0].day = 'Today';
-                    forecast[1].day = 'Tomorrow';
                     dispatch({type:'FETCH_FORECAST_FULFILLED', payload:forecast});
                 }, config.LOADING_SCREEN_DURATION); // delay a bit in order to show the cool loading screen
             })

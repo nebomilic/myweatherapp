@@ -8,7 +8,7 @@ class LoadingPage extends Component {
         return (
             <div className='loading-content'>
                 <header>myWeather</header>
-                <img className={loadingClass} src='/assets/sun.svg' alt='' width='120' height='120' />
+                <img className={loadingClass} src='assets/sun.svg' alt='' width='120' height='120' />
                 {this.props.loadingError === true &&
                 <div>Something went wrong. <br /> Please try again later.</div>
                 }
