@@ -1,0 +1,120 @@
+@import 'reset';
+@import 'animations';
+@import 'values';
+@import 'slider';
+//@import 'background';
+@import 'chart';
+@import 'toggle';
+// weather icons found here https://erikflowers.github.io/weather-icons/
+@import './weather-icons/scss/weather-icons.scss';
+
+
+
+
+html{
+    height: 100%;    
+    font-size: $font-size-normal;
+    
+}
+
+body {
+    min-width:320px; /* suppose you want minimun width of 320px */
+    width: auto ;  /* Firefox will set width as auto */
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#7392A7, #454560);
+    min-width: 320px;
+    font-family: $boring-font ;
+
+}
+.loading-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $grey;
+    font-size: $font-size-normal;
+    
+}
+
+.loading-sun {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    padding: 10px;   
+
+}
+
+.loading-sun--error {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.weather-content {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 310px 120px 350px ;
+    width: 100%;
+    margin: auto;
+}
+
+header {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-family: $fancy-font;
+    font-size: $font-size-biggest;
+    color: $dark-blue;
+    margin: 25px;
+
+}
+
+
+.clear-float {
+    clear: both;
+}
+
+.center-text {
+    text-align: left;
+}
+
+.overview {
+    grid-column: 2 / -2;
+    text-align: center;
+    color: $white;
+
+    .conditions {
+        font-size: $font-size-bigger;
+        text-transform: uppercase;
+    
+
+    }
+
+    .temperature {
+        font-size: 5rem;
+        margin: -50px;
+
+    }
+
+    .location {
+        font-size: $font-size-bigger;
+        margin-bottom: -30px;
+        
+    }
+    
+    .time {
+        font-size: $font-size-small;
+        color: rgba($white, $text-alpha);
+
+    }
+
+
+}
+
+@media (min-width: 1200px){
+    .weather-content{
+        width: 1100px;
+    }
+}

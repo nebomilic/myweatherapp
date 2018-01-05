@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import App from './containers/App';
-import './scss/main.scss';
 import {Provider} from 'react-redux';
-import store from './store';
+import store from './redux/store';
+import App from './ui/containers/App';
+import './ui/styles/scss/main.scss';
 
 const { render } = ReactDOM;
 

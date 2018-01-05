@@ -37,6 +37,11 @@ module.exports = {
                     use: ['css-loader', 'sass-loader']
                 })
             },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                exclude: /node_modules/,
+                loader: 'file-loader'
+            }
         ]
     },
     plugins: [
@@ -46,7 +51,7 @@ module.exports = {
         }),
         extractPlugin,
         new CopyWebpackPlugin([
-            { from: './src/client/assets', to: 'assets' }
+            { from: './src/client/ui/styles/assets', to: 'assets' }
         ])     
     ]
 };
