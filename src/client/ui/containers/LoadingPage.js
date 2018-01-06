@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 class LoadingPage extends Component { 
    
     render() {
-        const loadingClass = this.props.loadingError?'loading-sun--error':'loading-sun';
+        const loadingClass = `wi icon ${this.props.loadingError?'loading-sun--error wi-rain':'loading-sun wi-day-sunny'}`;
         return (
-            <div className='loading-content'>
-                <img className={loadingClass} src='assets/images/sun.svg' alt='' width='120' height='120' />
+            <div className='loading-content fade-in'>
+                <i className={loadingClass}/>
                 {this.props.loadingError === true &&
                 <div>Something went wrong. <br /> Please try again later.</div>
                 }

@@ -12,14 +12,15 @@
 }
 
 .loading-sun {
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
-    padding: 10px;   
-
+    color: $white;
+    @extend .infinite-spin;
+    padding: 40px;   
+    position: relative;
+    font-size: 5rem;
 }
 
 .loading-sun--error {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+    color: rgba($white, 0.2);    
+    font-size: 5rem;    
+    padding: 40px;   
 }

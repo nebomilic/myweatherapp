@@ -21,7 +21,7 @@ class BarChart extends Component {
             <ul className='chart'>
                 { this.props.forecast.map((item, i) => 
                     <li key={i}>
-                        <span key={item.code} style={{ 'height' : this.convertToPercent(item.high, unit) }} title={convertToCurrentUnitString(item.high, unit)}></span>
+                        <span key={item.code} style={{ 'height' : this.convertToPercent(item.high, unit) }} title={`${convertToCurrentUnit(item.high, unit)}°`}></span>
                     </li>
                 )}                
             </ul>   

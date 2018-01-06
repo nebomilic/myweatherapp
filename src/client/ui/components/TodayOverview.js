@@ -6,9 +6,9 @@ class TodayOverview extends Component {
     render = () => { 
         const {data, unit} = this.props;
         return (
-            <div className='overview' >  
+            <div className='overview clear-float' >  
                 <p className='conditions'>{data.conditions}</p>    
-                <p className='temperature'>{convertToCurrentUnit(data.temperature, unit)}<sup className='unit'>&deg;{unit}</sup></p>          
+                <p className='temperature'>{convertToCurrentUnit(data.temperature, unit)}<sup className='unit'>&deg;</sup></p>          
                 <p className='location'>{data.location}</p>          
                 <p className='time'>{data.time}</p>
             </div>  

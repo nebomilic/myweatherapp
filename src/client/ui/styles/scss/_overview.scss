@@ -10,12 +10,12 @@
     }
 
     .temperature {
-        font-size: 5rem;
+        font-size: 4rem;
         margin: -50px;
 
         .unit {
-            font-size: $font-size-normal;
-            top: -2.9em;
+            font-size: $font-size-bigger;
+            top: -0.0em;
             color: rgba($white, 0.6);
         }
 

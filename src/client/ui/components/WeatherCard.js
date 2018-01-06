@@ -17,8 +17,8 @@ class WeatherCard extends Component {
                 <br />    
                 <i className='wi wi-night-sleet icon'></i>
                 <br />    
-                <span className='high'>{convertToCurrentUnit(data.high, unit)} | </span> 
-                <span className='low'> {convertToCurrentUnit(data.low, unit)}</span><br />
+                <span className='high'>{convertToCurrentUnit(data.high, unit)}&deg; | </span> 
+                <span className='low'> {convertToCurrentUnit(data.low, unit)}&deg;</span><br />
                 {/*<span className='text'>{data.text} </span>*/}
     
             </div>  

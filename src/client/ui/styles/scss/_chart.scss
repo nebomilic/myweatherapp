@@ -24,10 +24,11 @@
       animation: draw 1s ease-in-out;
       
       &:before{
+        font-size: 0.7rem;
         position:absolute;
-        left:0;right:0;top:100%;
+        left:0;right:0;bottom:8px;
         padding:5px 1em 0;
-            display:block;
+        //display:none;
         text-align:center;
         content:attr(title);
         word-wrap: break-word;

@@ -1,8 +1,14 @@
+.toggle-container {
+    //padding-top: 20px;
+    grid-column: 1 / -1;    
+    float:right;
+    margin: 20px 20px 0px 0px;
+
+}
+
 .toggle {
-    
-    padding-top: 20px;
-    grid-column: -3 / -1;
-    display: inline;
+    float: right;    
+    //display: inline;
     font-size: $font-size-normal;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -51,22 +57,3 @@
     }
     
 }
-
-@media (max-width: 750px) and (min-width: 600px){
-    .toggle{
-        grid-column: -1 / -4;
-    }
-}
-
-@media (max-width: 600px){
-    .toggle{
-        grid-column: -1 / -7;
-    }
-}
-
-@media (min-width: 1200px){
-    .toggle{
-        grid-column: -4 / -5;
-    }  
-  
-  }

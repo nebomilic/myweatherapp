@@ -14,11 +14,12 @@ class MainPage extends Component {
 
     render() {       
         return (
-            <div className='weather-content'>
+            <div className='weather-content fade-in'>
                 <UnitToggle clickHandler={this.unitClickHandler}/>
                 <TodayOverview  data={this.props.today} unit={this.props.unit}/> 
                 <Slider  forecast={this.props.forecast} />                
                 <BarChart forecast={this.props.forecast}/>
+                <footer>see sourcecode on <a href='https://github.com/nebomilic/myweatherapp' target='_blank' rel='noopener noreferrer'>github</a></footer>
             </div>
         );
     }  
