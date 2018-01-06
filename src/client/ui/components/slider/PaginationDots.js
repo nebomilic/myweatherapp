@@ -19,7 +19,7 @@ class PaginationDots extends Component {
     render = () => {
         return (
             <div className='pagination-dots'>
-            {this.renderDots()}
+                {this.renderDots()}
             </div>  
         );
     }

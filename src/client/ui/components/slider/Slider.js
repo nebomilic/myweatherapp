@@ -5,8 +5,6 @@ import PaginationDots from './PaginationDots';
 import Swipe from '../../../utils/Swipe';
 class Slider extends Component {
 
-    // TODO: add key listeners in order to control slider with left and right slider
-
     componentWillMount = () =>  {
         this.resetState();
         this.handleKeyboard();
@@ -70,6 +68,7 @@ class Slider extends Component {
     }
 
     previousPage = () => {
+
         if (this.state.currentPage > 0) {
 
             if (this.state.currentPage === 1) {
@@ -87,6 +86,7 @@ class Slider extends Component {
     }
     
     nextPage = () => {
+
         if (this.state.currentPage < this.state.numPages - 1) {
 
             if (this.state.currentPage === this.state.numPages - 2) {

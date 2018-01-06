@@ -10,11 +10,20 @@ export default function reducer(state={
         return {...state};
     }
     case 'FETCH_FORECAST_FULFILLED':{
+        const forecast = action.payload.item.forecast;
+        forecast[0].day = 'Today'; // because we don't want to show the date for today
+        const today = {
+            conditions: action.payload.item.condition.text,
+            temperature: action.payload.item.condition.temp,
+            location: action.payload.location.city,
+            time: 'Now', 
+        };
+
         return {
             ...state,
             isLoading: false,
-            forecast:action.payload.forecast,
-            today: action.payload.today
+            forecast: forecast,
+            today: today
         };
     }
     case 'FETCH_FORECAST_REJECTED':{
