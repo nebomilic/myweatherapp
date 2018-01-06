@@ -1,27 +1,61 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
-@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
-@import url('https://fonts.googleapis.com/css?family=Mallanna');
-@import url('https://fonts.googleapis.com/css?family=Arima+Madurai');
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
   
 .the-icons {
   font-size: 25px;
 }
 
-
 $primary-font: 'Dosis', Helvetica Neue,sans-serif;
-$boring-font: 'Mallanna', Helvetica Neue,sans-serif;
-$fancy-font: 'Mallanna', Helvetica Neue,sans-serif;
 //$boring-font: Roboto,Helvetica Neue,sans-serif;
-$yellow: #EDB747;
 $light-blue: #EFF4ED;
 $dark-blue: #3e7ca5;
 $white: white;
 $transparent-white: rgba(255, 255, 255, 0.6);
-$grey: rgb(189, 186, 158);
 $font-size-normal: 24px;
-
 $font-size-bigger: 1.414rem;
 $font-size-biggest: 1.999rem;
 $font-size-small: 0.707rem;
 $text-alpha: 0.6;
+
+// nice tool for color gradients http://www.colinkeany.com/blend/
+
+//royal dark
+/*$color-1: #141E30;
+$color-2: #243b55;*/
+
+// dark sky
+// $color-1: #09203f ;
+// $color-2: #537895;
+
+// sunset!
+// $color-2: #777492   ;
+// $color-1: #19547b;
+
+// malo dreci ali ok - bright sky
+// $color-1: #4ca1af    ;
+// $color-2: #51c9df;
+
+// sky blue - koja ne dreci
+$color-2: #a3bded    ;
+$color-1: #6991c7 ;
+
+/*pink as fuck
+$color-1: #f794a4    ;
+$color-2: #fdd6bd ;*/
+
+/* pink purlple
+$color-1: #a18cd1    ;
+$color-2: #fbc2eb ;
+*/
+
+// warm yellow/orange
+// $color-1: #CA7542    ;
+// $color-2: #DDBD54 ;
+
+// nice bright blue and purple
+// $color-1: #6A71AE    ;
+// $color-2: #8DC6C3 ;
+
+// yellow blue bright
+// $color-1: #AEA16A    ;
+// $color-2: #86D9D8 ;

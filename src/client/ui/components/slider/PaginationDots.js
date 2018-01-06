@@ -11,9 +11,7 @@ class PaginationDots extends Component {
             const className = (i === currentPage)?'wi icon wi-moon-full dot--active':'wi icon wi-moon-full dot';
             dots.push(<i className={className} key={i}></i>);
         }
-
         return dots;
-
     }
 
     render = () => {
@@ -25,12 +23,9 @@ class PaginationDots extends Component {
     }
 }
 
-
-
 PaginationDots.propTypes = {
     numPages: PropTypes.number,
     currentPage: PropTypes.number
 };
-
 
 export default PaginationDots;

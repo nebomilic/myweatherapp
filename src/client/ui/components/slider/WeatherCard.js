@@ -4,14 +4,12 @@ import { convertToCurrentUnit } from '../../../utils';
 import config from '../../../config';
 
 class WeatherCard extends Component {
-
     
     codeToIcon = (code) => {
         return `wi icon ${config.ICONS_DICTIONARY[code]}`;
     }
 
     render = () => {
-
         const {data, unit} = this.props;
         return (
             <div className='weather-card'>
@@ -30,6 +28,5 @@ WeatherCard.propTypes = {
     data: PropTypes.object,
     unit: PropTypes.string
 };
-
 
 export default WeatherCard;

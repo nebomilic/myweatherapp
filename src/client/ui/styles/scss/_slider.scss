@@ -15,8 +15,6 @@
     grid-column: 2 / -2;    
     overflow: hidden;
     white-space: nowrap;
-    //height: 400px;    
-    //background: rgba($white, 0.2);
 
     .slider-wrapper {
         position: relative;
@@ -44,7 +42,6 @@
     .day{
         font-size: $font-size-normal;
         display: inline-block;
-        //float: left;
     }
    
     .high{

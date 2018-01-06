@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { convertToCurrentUnitString, convertToCurrentUnit } from '../../utils';
-
+import { convertToCurrentUnit } from '../../utils';
 class BarChart extends Component { 
 
     convertToPercent = (value, unit) => {
@@ -28,20 +26,9 @@ class BarChart extends Component {
         );}
 }
 
-const mapStateToProps = ( state ) => ({  
-    unit: state.forecastReducer.unit
-});
-
 BarChart.propTypes = {
-    data: PropTypes.object,
-    unit: PropTypes.string
-};
-
-
-BarChart.propTypes = {
+    unit: PropTypes.string,
     forecast: PropTypes.array
 };
 
-const BarChartContainer = connect(mapStateToProps)(BarChart);
-
-export default BarChartContainer;
+export default BarChart;

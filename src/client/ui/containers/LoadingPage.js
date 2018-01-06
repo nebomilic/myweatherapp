@@ -10,8 +10,7 @@ class LoadingPage extends Component {
                 <i className={loadingClass}/>
                 {this.props.loadingError === true &&
                 <div>Something went wrong. <br /> Please try again later.</div>
-                }
-                
+                }                
                 {this.props.loadingError === false &&
                 <div>Loading...</div>
                 }

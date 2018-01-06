@@ -45,5 +45,3 @@ export default function reducer(state={
     }
     return state;
 }
-
-//used as reference https://medium.com/technoetics/simple-react-redux-app-5f7390f4482b

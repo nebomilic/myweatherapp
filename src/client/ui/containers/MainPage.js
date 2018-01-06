@@ -12,13 +12,16 @@ class MainPage extends Component {
         this.props.dispatch(switchUnit());
     }
 
-    render() {       
+    render() {
+        
+        const {unit, today, forecast} = this.props;
+        
         return (
             <div className='weather-content fade-in'>
                 <UnitToggle clickHandler={this.unitClickHandler}/>
-                <TodayOverview  data={this.props.today} unit={this.props.unit}/> 
-                <Slider  forecast={this.props.forecast} />                
-                <BarChart forecast={this.props.forecast}/>
+                <TodayOverview  data={today} unit={unit}/> 
+                <Slider  forecast={forecast} unit={unit}/>                
+                <BarChart forecast={forecast} unit={unit}/>
                 <footer>see sourcecode on <a href='https://github.com/nebomilic/myweatherapp' target='_blank' rel='noopener noreferrer'>github</a></footer>
             </div>
         );

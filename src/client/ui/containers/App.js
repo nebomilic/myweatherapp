@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { fetchForecast } from '../../redux/actions';
 import LoadingPage from './LoadingPage';
 import MainPage from './MainPage';
-
 class App extends Component { 
 
     componentWillMount = () => {
@@ -30,16 +29,14 @@ const mapStateToProps = ( state ) => ({
     isLoading: state.forecastReducer.isLoading,
     loadingError: state.forecastReducer.loadingError
 });
-/* const mapDispatchToProps = {
-    activateGeod,
-    closeGeod,
-  }; */
+
 App.propTypes = {
     isLoading: PropTypes.bool,
     loadingError: PropTypes.bool,
     forecast: PropTypes.array,
     dispatch: PropTypes.func
 };
+
 const AppContainer = connect(mapStateToProps)(App);
 export default AppContainer;
 

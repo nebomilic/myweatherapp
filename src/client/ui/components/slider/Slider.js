@@ -28,14 +28,14 @@ class Slider extends Component {
     
     renderSlides = () => {
         const {pageSize, numPages} = this.state;
-        const {forecast} = this.props;
+        const {forecast, unit} = this.props;
 
         let slides = [];
     
         for(let i = 0; i < numPages; i++) {            
             slides.push(<div className='weather-card-slide' key={i} >
                 {forecast.slice(i*pageSize, i*pageSize+pageSize)
-                    .map((item, j)=> <WeatherCard data={item} key={j}/>)}</div>);
+                    .map((item, j)=> <WeatherCard data={item} unit={unit} key={j}/>)}</div>);
     
         }
         return slides;
@@ -167,7 +167,8 @@ class Slider extends Component {
 }
 
 Slider.propTypes = {
-    forecast: PropTypes.array
+    forecast: PropTypes.array,
+    unit: PropTypes.string
 };
 
 export default Slider;

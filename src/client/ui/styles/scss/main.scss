@@ -10,15 +10,10 @@
 // weather icons found here https://erikflowers.github.io/weather-icons/
 @import './weather-icons/scss/weather-icons.scss';
 
-
-
-
 html{
     height: 100%;    
     font-size: $font-size-normal;
-    background: rgb(1, 22, 27);
-    
-    
+    background: $color-1;
 }
 
 body {
@@ -26,13 +21,13 @@ body {
     min-width:320px; /* suppose you want minimun width of 320px */
     width: auto ;  /* Firefox will set width as auto */
     height: 100%;
-    width: 100%;
-    background: linear-gradient(rgb(56, 133, 156), #0c404d, rgb(1, 22, 27));
-    //background: linear-gradient( rgb(1, 22, 27), #0c404d, rgb(56, 133, 156));
+    width: 100%;   
     min-width: 320px;
     font-family: $primary-font;
     overflow-x: hidden;
-
+    background: linear-gradient($color-2, $color-1);
+    //background: linear-gradient(rgb(56, 133, 156), #0c404d, rgb(1, 22, 27));
+    //background: linear-gradient( rgb(1, 22, 27), #0c404d, rgb(56, 133, 156));
 }
 
 .weather-content {
@@ -42,16 +37,6 @@ body {
     grid-template-rows: 50px auto 170px 25% 20px;
     width: 100vw;
     height: 100vh;
-}
-
-header {
-    grid-column: 1 / -1;
-    text-align: center;
-    font-family: $fancy-font;
-    font-size: $font-size-biggest;
-    color: $dark-blue;
-    margin: 25px;
-
 }
 
 footer {
@@ -64,7 +49,6 @@ footer {
     a, a:visited {
         color: rgba($white, 0.6);
         text-decoration: none;
-
     }
 
     a:hover {
@@ -76,6 +60,5 @@ footer {
         color: rgba($white, 0.6);
         text-decoration: none;
     }
-
     
 }
