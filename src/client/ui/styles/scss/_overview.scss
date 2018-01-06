@@ -1,7 +1,6 @@
 .overview {
     grid-column: 2 / -2;
     text-align: center;
-    color: $white;
 
     .conditions {
         font-size: $font-size-bigger;
@@ -17,6 +16,7 @@
         .unit {
             font-size: $font-size-normal;
             top: -2.9em;
+            color: rgba($white, 0.6);
         }
 
     }

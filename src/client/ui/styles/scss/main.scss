@@ -2,7 +2,6 @@
 @import 'animations';
 @import 'values';
 @import 'slider';
-//@import 'background';
 @import 'chart';
 @import 'toggle';
 @import 'overview';
@@ -18,9 +17,11 @@ html{
     height: 100%;    
     font-size: $font-size-normal;
     
+    
 }
 
 body {
+    color: $white;
     min-width:320px; /* suppose you want minimun width of 320px */
     width: auto ;  /* Firefox will set width as auto */
     height: 100%;
@@ -29,6 +30,7 @@ body {
     //background: linear-gradient( rgb(1, 22, 27), #0c404d, rgb(56, 133, 156));
     min-width: 320px;
     font-family: $primary-font;
+    overflow-x: hidden;
 
 }
 

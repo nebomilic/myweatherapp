@@ -7,7 +7,7 @@
     //grid-template-rows: 40px auto;
     width: 100%;
     margin: auto;
-    background: rgba($white, 0.2);
+    background: rgba($white, 0.03);
 }
 
 
@@ -50,7 +50,6 @@
 
         //font-family: $boring-font;
         font-size: $font-size-normal;
-        color: $white;
         //text-transform: uppercase;
         display: inline-block;
         //float: left;
@@ -59,7 +58,6 @@
     .high{
         //font-family: $fancy-font;
         font-size: $font-size-normal;
-        color: $white;
 
     }
 
@@ -70,16 +68,8 @@
 
     }
 
-    .text{
-        font-size: $font-size-normal;
-        color: $grey;
-        //font-family: $boring-font;
-
-    }
-
     .icon{
         font-size: $font-size-bigger;   
-        color: $white;
         padding: 15px;
     }
 
@@ -98,7 +88,6 @@
 
 .control {
     font-size: $font-size-biggest;
-    color: $white;
     cursor: pointer;  
     //background: $light-blue;
     //border-radius: 50%;
@@ -121,11 +110,6 @@
     padding: 5px;
 }
 
-hr { 
-    color: $grey; 
-    background-color: $grey; 
-    height: 2px;    
-  }
 
 @media (min-width: 1200px){
     .weather-card {
