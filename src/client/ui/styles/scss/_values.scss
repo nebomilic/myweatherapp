@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Delius');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
 @import url('https://fonts.googleapis.com/css?family=Mallanna');
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai');
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
   
 .the-icons {
   font-size: 25px;
 }
 
+
+$primary-font: 'Dosis', Helvetica Neue,sans-serif;
 $boring-font: 'Mallanna', Helvetica Neue,sans-serif;
 $fancy-font: 'Mallanna', Helvetica Neue,sans-serif;
 //$boring-font: Roboto,Helvetica Neue,sans-serif;

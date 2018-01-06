@@ -18,9 +18,9 @@
     }
     
     span{
-      margin:0 .5em;
+      margin: 3px;
       display: block;
-      background: $dark-blue;
+      background: #133742;
       animation: draw 1s ease-in-out;
       
       &:before{
@@ -31,7 +31,7 @@
         text-align:center;
         content:attr(title);
         word-wrap: break-word;
-        color: $grey;
+        color: rgba($white, $text-alpha);
       }
       
     }
@@ -41,3 +41,12 @@
   @keyframes draw{
     0%{height:0;} 
   }
+
+
+@media (min-width: 1200px){
+  .chart{
+      grid-column: 4 / -4;
+  }
+
+
+}

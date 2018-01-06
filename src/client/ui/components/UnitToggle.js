@@ -7,7 +7,7 @@ class UnitToggle extends Component {
             <div className='toggle' >  
                 <span className='toggleText'>&deg;F</span>          
                 <input type="checkbox" id="switch" onClick={this.props.clickHandler}/>
-                <label htmlFor="switch">&nbsp; &nbsp; &nbsp; &nbsp; </label>
+                <label htmlFor="switch">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
                 <span className='toggleText'>&deg;C</span>
             </div>  
 

@@ -15,8 +15,8 @@ class MainPage extends Component {
     render() {       
         return (
             <div className='weather-content'>
-                <TodayOverview  data={this.props.today} /> 
-                {/*<UnitToggle clickHandler={this.unitClickHandler}/>*/}
+                <UnitToggle clickHandler={this.unitClickHandler}/>
+                <TodayOverview  data={this.props.today} unit={this.props.unit}/> 
                 <Slider  forecast={this.props.forecast} />                
                 <BarChart forecast={this.props.forecast}/>
             </div>
@@ -27,11 +27,13 @@ class MainPage extends Component {
 MainPage.propTypes = {
     forecast: PropTypes.array,
     dispatch: PropTypes.func,
-    today: PropTypes.object
+    today: PropTypes.object,
+    unit: PropTypes.string
 };
 
 const mapStateToProps = ( state ) => ({  
     forecast: state.forecastReducer.forecast,
+    unit: state.forecastReducer.unit,
     today: state.forecastReducer.today
 });
 

@@ -7,6 +7,7 @@
     //grid-template-rows: 40px auto;
     width: 100%;
     margin: auto;
+    background: rgba($white, 0.2);
 }
 
 
@@ -15,7 +16,7 @@
     overflow: hidden;
     white-space: nowrap;
     //height: 400px;    
-    background: rgba($white, 0.2);
+    //background: rgba($white, 0.2);
 
     .slider-wrapper {
         position: relative;
@@ -35,10 +36,10 @@
 .weather-card{
     text-align: center;
     float: left;
-    width: 30%;
+    width: 33%;
     height: 170px;
-    margin: 5px;
-    padding: 10px;
+    //margin: 5px;
+    padding-top: 15px;
     //background: $transparent-white ;
     border: none; 
     //border-radius: 7px;    
@@ -47,7 +48,7 @@
     
     .day{
 
-        font-family: $boring-font;
+        //font-family: $boring-font;
         font-size: $font-size-normal;
         color: $white;
         //text-transform: uppercase;
@@ -56,7 +57,7 @@
     }
    
     .high{
-        font-family: $fancy-font;
+        //font-family: $fancy-font;
         font-size: $font-size-normal;
         color: $white;
 
@@ -65,14 +66,14 @@
     .low{
         font-size: $font-size-normal;     
         color: rgba($white, $text-alpha);       
-        font-family: $fancy-font;
+        //font-family: $fancy-font;
 
     }
 
     .text{
         font-size: $font-size-normal;
         color: $grey;
-        font-family: $boring-font;
+        //font-family: $boring-font;
 
     }
 
@@ -86,30 +87,36 @@
 
 
 .left-control {
-    grid-column: 1 / 2;   
+    grid-column: 1 / 2;  
+    text-align: right; 
 }
 
 .right-control {
-    grid-column: -2 / -1;
+    grid-column: -2 / -1;    
+    text-align: left; 
 }
 
 .control {
     font-size: $font-size-biggest;
-    color: $yellow;
+    color: $white;
     cursor: pointer;  
     //background: $light-blue;
     //border-radius: 50%;
     padding: 5px;
+    position: relative;
+    top: 50%;
+    margin-top: -85px;
 }
 
 
 .control:hover {
-    color: $dark-blue;
+    //color: $dark-blue;
 }
 
 .control--disabled {
+    @extend .control;
     font-size: $font-size-biggest;
-    color: $grey;    
+    color: rgba($white, 0.2);    
     //cursor: none;    
     padding: 5px;
 }
@@ -122,27 +129,39 @@ hr {
 
 @media (min-width: 1200px){
     .weather-card {
-        width: 24%;
+        width: 25%;
     }
 
     .weather-content{
         width: 1100px;
     }
+
+    .weather-slider{
+        grid-column: 4 / -4;
+    }
+
+    .left-control {
+        grid-column: 3 / 4;  
+     }
+    
+    .right-control {
+        grid-column: -3 / -4;    
+     }
 }
 
-@media (max-width: 600px){
+@media (min-width: 400px) and (max-width: 600px){
     .weather-card {
-        width: 47%;
+        width: 50%;
     }
 }
 
+
 @media (max-width: 380px){
+
     .weather-card {      
         width: 100%;
     }
-}
 
-@media (max-width: 320px){
     .weather-cards-container {
         grid-column: 1 / -1;  
     }
@@ -155,3 +174,6 @@ hr {
         display: none;
     }
 }
+
+
+

@@ -1,0 +1,25 @@
+
+.loading-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $grey;
+    font-size: $font-size-normal;
+    
+}
+
+.loading-sun {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    padding: 10px;   
+
+}
+
+.loading-sun--error {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
