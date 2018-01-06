@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import WeatherCard from './WeatherCard';
-import Swipe from '../../utils/Swipe';
+import PaginationDots from './PaginationDots';
+import Swipe from '../../../utils/Swipe';
 class Slider extends Component {
 
     // TODO: add key listeners in order to control slider with left and right slider
@@ -23,21 +24,19 @@ class Slider extends Component {
     resetState = () => {
         const pageSize = this._calcPageSize();
         const {forecast} = this.props;
-
         const numPages = Math.ceil(forecast.length / pageSize);
         this.setState({pageSize: this._calcPageSize(), translateValue: 0, currentPage: 0, numPages: numPages});
     }
     
     renderSlides = () => {
-        const {pageSize} = this.state;
+        const {pageSize, numPages} = this.state;
         const {forecast} = this.props;
 
         let slides = [];
-        let numPages = Math.ceil(forecast.length / pageSize);
     
-        for(let i = 0; i <= numPages; i++) {            
+        for(let i = 0; i < numPages; i++) {            
             slides.push(<div className='weather-card-slide' key={i} >
-                {this.props.forecast.slice(i*pageSize, i*pageSize+pageSize)
+                {forecast.slice(i*pageSize, i*pageSize+pageSize)
                     .map((item, j)=> <WeatherCard data={item} key={j}/>)}</div>);
     
         }
@@ -157,6 +156,8 @@ class Slider extends Component {
                 <div className='right-control' onClick={this.nextPage}>
                     <span id='rightArrow' className='glyphicon glyphicon-chevron-right control'></span>
                 </div>
+                <PaginationDots numPages={this.state.numPages} currentPage={this.state.currentPage}/>
+
             </div>
 
         );

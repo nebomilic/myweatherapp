@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { convertToCurrentUnit } from '../../utils';
-import config from '../../config';
+import { convertToCurrentUnit } from '../../../utils';
+import config from '../../../config';
 
 class WeatherCard extends Component {
 
@@ -27,16 +26,10 @@ class WeatherCard extends Component {
     }
 }
 
-const mapStateToProps = ( state ) => ({  
-    unit: state.forecastReducer.unit
-});
-
-
 WeatherCard.propTypes = {
     data: PropTypes.object,
     unit: PropTypes.string
 };
 
-const WeatherCardContainer = connect(mapStateToProps)(WeatherCard);
 
-export default WeatherCardContainer;
+export default WeatherCard;

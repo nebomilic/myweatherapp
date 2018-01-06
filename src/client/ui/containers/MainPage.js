@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Slider from '../components/Slider';
+import Slider from '../components/slider/Slider';
 import BarChart from '../components/BarChart';
 import UnitToggle from '../components/UnitToggle';
 import TodayOverview from '../components/TodayOverview';
