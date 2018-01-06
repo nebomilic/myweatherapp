@@ -10,8 +10,8 @@ export function fetchForecast(){
                 // probably better move it to reducer
                 setTimeout(() => {
                     const forecast  = data.query.results.channel.item.forecast;
-                    const now = new Date();
-                    //const time = `Today, ${now.getHours()}:${now.getMinutes()}`;
+                    // const now = new Date();
+                    // const time = `Today, ${now.getHours()}:${now.getMinutes()}`;
                     const time = 'Now';
                     const today = {
                         conditions: data.query.results.channel.item.condition.text,

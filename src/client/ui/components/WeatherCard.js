@@ -2,25 +2,26 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { convertToCurrentUnit } from '../../utils';
-
+import config from '../../config';
 
 class WeatherCard extends Component {
 
-    //check weather icons https://erikflowers.github.io/weather-icons/
+    
+    codeToIcon = (code) => {
+        return `wi icon ${config.ICONS_DICTIONARY[code]}`;
+    }
 
-    render() {
+    render = () => {
 
         const {data, unit} = this.props;
         return (
             <div className='weather-card'>
-                <span className='day'>{this.props.data.day}</span>
+                <span className='day'>{data.day}</span>
                 <br />    
-                <i className='wi wi-night-sleet icon'></i>
+                <i className={this.codeToIcon(data.code)} title={data.text}></i>
                 <br />    
                 <span className='high'>{convertToCurrentUnit(data.high, unit)}&deg; | </span> 
                 <span className='low'> {convertToCurrentUnit(data.low, unit)}&deg;</span><br />
-                {/*<span className='text'>{data.text} </span>*/}
-    
             </div>  
         );
     }
