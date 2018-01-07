@@ -57,3 +57,10 @@
     }
     
 }
+
+@media (min-width: 1200px){
+    .toggle-container{
+        grid-column: 4 / -4;
+    }
+  
+  }

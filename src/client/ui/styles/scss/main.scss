@@ -13,7 +13,7 @@
 html{
     height: 100%;    
     font-size: $font-size-normal;
-    background: $color-1;
+    background: $color-3;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
     min-width: 320px;
     font-family: $primary-font;
     overflow-x: hidden;
-    background: linear-gradient($color-2, $color-1);
+    background: linear-gradient($color-2, $color-1, $color-3);
     //background: linear-gradient(rgb(56, 133, 156), #0c404d, rgb(1, 22, 27));
     //background: linear-gradient( rgb(1, 22, 27), #0c404d, rgb(56, 133, 156));
 }
@@ -34,7 +34,7 @@ body {
     display: grid;
     grid-gap: 3px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50px auto 170px 25% 20px;
+    grid-template-rows: 50px auto 170px 45% 50px;
     width: 100vw;
     height: 100vh;
 }
@@ -44,7 +44,9 @@ footer {
     text-align: center;
     grid-column: 1 / -1;
     color: rgba($white, 0.6);
-    margin-top: 0px;
+    margin-top: -15px;
+    padding-top: 25px;
+    background: $color-4;
 
     a, a:visited {
         color: rgba($white, 0.6);

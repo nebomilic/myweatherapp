@@ -4,8 +4,8 @@ import { convertToCurrentUnit } from '../../utils';
 class BarChart extends Component { 
 
     convertToPercent = (value, unit) => {
-        const MAX_C = 40;
-        const MAX_F = 122;
+        const MAX_C = 20;
+        const MAX_F = 80;
         const convertedValue = convertToCurrentUnit(value, unit);
         const maxVal = unit === 'C' ? MAX_C: MAX_F;
         const percentValue = Math.ceil((parseInt(convertedValue) / maxVal)*100);
