@@ -5,8 +5,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    //color: $grey;
-    font-size: $font-size-normal;    
+    font-size: $font-size-normal;   
+    color: $white;
+
 }
 
 .loading-sun {
@@ -18,7 +19,7 @@
 }
 
 .loading-sun--error {
-    color: rgba($white, 0.2);    
+    color: $transparent-white-bg-2;    
     font-size: 5rem;    
     padding: 40px;   
 }

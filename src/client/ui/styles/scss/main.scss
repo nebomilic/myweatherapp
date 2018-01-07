@@ -26,8 +26,6 @@ body {
     font-family: $primary-font;
     overflow-x: hidden;
     background: linear-gradient($color-2, $color-1, $color-3);
-    //background: linear-gradient(rgb(56, 133, 156), #0c404d, rgb(1, 22, 27));
-    //background: linear-gradient( rgb(1, 22, 27), #0c404d, rgb(56, 133, 156));
 }
 
 .weather-content {
@@ -43,13 +41,13 @@ footer {
     font-size: $font-size-small;
     text-align: center;
     grid-column: 1 / -1;
-    color: rgba($white, 0.6);
+    color: $transparent-white-text;
     margin-top: -15px;
     padding-top: 25px;
     background: $color-4;
 
     a, a:visited {
-        color: rgba($white, 0.6);
+        color: $transparent-white-text;
         text-decoration: none;
     }
 

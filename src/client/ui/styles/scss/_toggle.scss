@@ -17,7 +17,7 @@
 
     .toggleText {
         margin: 0px 10px;
-        color: rgba($white, 0.6);
+        color: $transparent-white-text;
     }
 
     input[type=checkbox]{
@@ -29,7 +29,7 @@
     label {
         cursor: pointer;
         text-indent: -9999px;
-        background: rgba($white, 0.2);
+        background: $transparent-white-bg-2;
         border-radius: 40px;
         font-size: 1.2rem;
         position: relative;
@@ -48,7 +48,7 @@
     }
     
     input:checked + label {
-        background: rgba($white, 0.2);
+        background: $transparent-white-bg-2;
     }
     
     input:checked + label:after {

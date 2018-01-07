@@ -14,7 +14,7 @@
         .unit {
             font-size: $font-size-bigger;
             top: -1.4em;
-            color: rgba($white, 0.6);
+            color: $transparent-white-text;
         }
 
     }
@@ -27,7 +27,7 @@
     
     .time {
         font-size: $font-size-small;
-        color: rgba($white, $text-alpha);
+        color: $transparent-white-text;
 
     }
 

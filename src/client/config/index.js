@@ -2,7 +2,7 @@ export default {
     //GET_WEATHER_URL: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Honolulu%2C%20HI%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys', // honolulu
     GET_WEATHER_URL: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(769293)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys', // Palma de Mallorca
     LOADING_SCREEN_DURATION: 1000, // in miliseconds
-    ICONS_DICTIONARY:
+    ICONS_DICTIONARY: // mappings ->weather code: weather icon
     {
         0: 'wi-tornado', //	tornado
         1: 'wi-storm-showers', //	tropical storm
@@ -52,6 +52,6 @@ export default {
         45: 'wi-storm-showers', //	thundershowers
         46: 'wi-snow', //	snow showers
         47: 'wi-storm-showers', //	isolated thundershowers
-        3200: 'wi-earthquake', //not available
+        3200: 'wi-earthquake', //weather info not available
     }
 };

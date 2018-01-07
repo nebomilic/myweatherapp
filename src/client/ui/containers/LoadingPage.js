@@ -9,7 +9,7 @@ class LoadingPage extends Component {
             <div className='loading-content fade-in'>
                 <i className={loadingClass}/>
                 {this.props.loadingError === true &&
-                <div>Something went wrong. <br /> Please try again later.</div>
+                <div>Something&#39;s wrong. <br /> Please try again later.</div>
                 }                
                 {this.props.loadingError === false &&
                 <div>Loading...</div>
