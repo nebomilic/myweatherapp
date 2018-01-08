@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis');
+//@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
   
 .the-icons {
   font-size: 25px;
 }
 
-$primary-font: 'Dosis', Helvetica Neue,sans-serif;
+//$primary-font: 'Dosis', Helvetica Neue,sans-serif;
+$primary-font: 'Quicksand', Helvetica Neue,sans-serif;
 $white: white;
 $transparent-white-bg: rgba(255, 255, 255, 0.05);
 $transparent-white-text: rgba(255, 255, 255, 0.6);
