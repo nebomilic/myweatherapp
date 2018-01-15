@@ -20,14 +20,7 @@ export function getUrl(url) {
     return callUrl(url, 'GET');
 }
 
-// converts to celsius if needed and returns a string
-export function convertToCurrentUnitString(value, unit) {
-    let returnValue = convertToCurrentUnit(value, unit);
-    const returnValueString = `${returnValue} °${unit}`;
-    return returnValueString; 
-}
-
-export function convertToCurrentUnit(value, unit) {
+export function convertToCurrentUnit(value, unit='F') {
     let returnValue = value;
     if (unit === 'C') {
         returnValue = Math.ceil((value - 32 ) * 5/9);
