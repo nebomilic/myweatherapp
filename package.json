@@ -8,6 +8,7 @@
     "build:prod": "webpack -p",
     "build": "webpack",
     "test": "jest",
+    "test:cov": "jest --coverage",
     "debug-test": "node --inspect --debug-brk ./node_modules/jest/bin/jest -i"
   },
   "author": "Nebo Milic",

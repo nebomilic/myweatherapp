@@ -11,7 +11,7 @@
         "args": [
             "-i"
         ],
-        "preLaunchTask": "build",
+        /*"preLaunchTask": "build",*/
         "internalConsoleOptions": "openOnSessionStart",
         "outFiles": [
             "${workspaceRoot}/dist/**/*"

@@ -1,5 +1,5 @@
-import {convertToCurrentUnit, getUrl} from '../client/utils';
-import config from '../client/config';
+import {convertToCurrentUnit, getUrl} from '../../client/utils';
+import config from '../../client/config';
 
 test ('Test unit conversion utility function convertToCurrentUnit()', () => {
 
@@ -24,7 +24,7 @@ test ('Test util function for rest calls getUrl() - and yahoo api result', (done
 });
 
 test ('Test util function for rest calls getUrl() with bogus url', (done) => {
-    getUrl('http://bogus.url.here').catch((error) => {        
+    getUrl('http://totally-bogus-non-existing-url.com').catch((error) => {        
         expect(error).toBeDefined();
         done();
     });

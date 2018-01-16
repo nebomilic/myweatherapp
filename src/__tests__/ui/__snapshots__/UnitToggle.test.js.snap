@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders corectly 1`] = `
+<div
+  className="toggle-container"
+>
+  <div
+    className="toggle"
+  >
+    <span
+      className="toggleText"
+    >
+      °F
+    </span>
+    <input
+      id="switch"
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="switch"
+    >
+                 
+    </label>
+    <span
+      className="toggleText"
+    >
+      °C
+    </span>
+  </div>
+</div>
+`;
