@@ -9,6 +9,7 @@
     "build": "webpack",
     "test": "jest",
     "test:cov": "jest --coverage",
+    "test:cov:full": "jest --collectCoverageFrom=src/client/**/*.js --coverage --verbose",
     "debug-test": "node --inspect --debug-brk ./node_modules/jest/bin/jest -i"
   },
   "author": "Nebo Milic",
