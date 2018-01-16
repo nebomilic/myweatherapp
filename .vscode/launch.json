@@ -1,0 +1,20 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+
+    // configuration found here https://medium.com/@mattmazzola/how-to-debug-jest-tests-with-vscode-48f003c7cb41
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Jest Tests",
+        "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
+        "args": [
+            "-i"
+        ],
+        "preLaunchTask": "build",
+        "internalConsoleOptions": "openOnSessionStart",
+        "outFiles": [
+            "${workspaceRoot}/dist/**/*"
+        ],
+    }]
+}

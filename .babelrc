@@ -1,6 +1,7 @@
 {
     "presets": [["es2015", {"modules": false}]],
-  
+    "sourceMaps": true,
+    "retainLines": true,
     "env": {
       "test": {
         "plugins": ["transform-es2015-modules-commonjs"]
